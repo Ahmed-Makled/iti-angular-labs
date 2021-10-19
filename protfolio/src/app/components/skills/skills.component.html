@@ -1,0 +1,19 @@
+<section class="about">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <h2 class="base__title">Skills</h2>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6 col-12" *ngFor='let skill of skills ;let i = index'>
+                <p>
+                    <span>{{skill.name}}</span>
+                    <ngb-progressbar [showValue]="true" [type]=skill.type [value]=skill.value></ngb-progressbar>
+                </p>
+            </div>
+
+
+        </div>
+    </div>
+</section>

@@ -1,0 +1,10 @@
+<div class="container m-5 p-2 rounded mx-auto bg-light shadow">
+
+    <!-- todo add -->
+    <app-todo-add (newTodo)="onNewItem($event)"></app-todo-add>
+
+    <!-- todo list -->
+    <app-todo-list [todos]="todos"></app-todo-list>
+
+
+</div>

@@ -1,0 +1,64 @@
+<!-- Todo list section -->
+<div class="row mx-1 px-5 pb-3 w-80">
+    <div class="col mx-auto">
+        <!-- Todo Item 1 -->
+        <div class="row px-3 align-items-center todo-item rounded" *ngFor="let todo of taskList; let i = index"
+            id="{{i}}">
+            <div class="col-auto m-1 p-0 d-flex align-items-center">
+                <h2 class="m-0 p-0">
+
+                    <i class="fa fa-check-square-o text-primary btn m-0 p-0 d-block" data-placement="bottom"
+                        title="Mark as todo" (click)="todo.isComplate=!todo.isComplate"
+                        *ngIf="todo.isComplate; else unComplateTodo"></i>
+
+
+                    <ng-template #unComplateTodo>
+                        <i class="fa fa-square-o text-primary btn m-0 p-0 d-block" data-placement="bottom"
+                            title="Mark as complete" (click)="todo.isComplate=!todo.isComplate"></i>
+                    </ng-template>
+
+
+
+                </h2>
+            </div>
+            <div class="col px-1 m-1 d-flex align-items-center">
+                <input *ngIf="!todo.isUpdate; else elseBlock" type="text"
+                    class="form-control form-control-lg border-0 edit-todo-input bg-transparent rounded px-3" readonly
+                    [value]="todo.name" [title]="todo.name" />
+
+                <ng-template #elseBlock>
+                    <input [(ngModel)]="todo.name" type="text"
+                        class="form-control form-control-lg border-0 edit-todo-input rounded px-3 " [value]="todo.name"
+                        [title]="todo.name" />
+                </ng-template>
+            </div>
+
+            <div class="col-auto m-1 p-0 todo-actions">
+                <div class="row d-flex align-items-center justify-content-end">
+                    <div class="col-6">
+                        <h5 class="m-0 p-0 px-2">
+
+                            <i *ngIf="!todo.isUpdate;else saveUpdated" class="fa fa-pencil text-info btn m-0 p-0"
+                                data-placement="bottom" title="Edit todo" (click)="todo.isUpdate=!todo.isUpdate"></i>
+
+                            <ng-template #saveUpdated>
+                                <i class="fa fa-floppy-o text-success btn m-0 p-0" title="update todo"
+                                    data-placement="bottom" (click)="update(todo)"></i>
+                            </ng-template>
+
+
+                        </h5>
+                    </div>
+                    <div class="col-6">
+                        <h5 class="m-0 p-0 px-2">
+                            <i class="fa fa-trash-o text-danger btn m-0 p-0" (click)="removeTodo(i)"
+                                title="Delete todo"></i>
+                        </h5>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+</div>

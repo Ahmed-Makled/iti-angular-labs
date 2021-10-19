@@ -1,0 +1,15 @@
+.about h5 span {
+  color: var(--primary-color);
+}
+
+.about ul li p {
+  font-weight: 500;
+}
+
+
+
+.about .btn {
+  background: var(--primary-color);
+  border-radius: 1rem;
+  color: #fff;
+}

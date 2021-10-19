@@ -1,0 +1,48 @@
+<section class="protfolio">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <h2 class="base__title">My portfolio
+                </h2>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12">
+                <ul ngbNav #nav="ngbNav" [(activeId)]="active" class="nav-tabs">
+                    <li [ngbNavItem]="i" *ngFor='let project of projects ;let i = index'>
+                        <a ngbNavLink>{{project.type}}</a>
+                        <ng-template ngbNavContent>
+                            <div class="row">
+
+                                <div class="col-md-4 col-12" *ngFor='let data of project.content '>
+                                    <div class="card text-center">
+                                        <img [src]="data.imgSrc" class="card-img-top" alt="...">
+                                        <div class="card-body">
+                                            <h5 class="card-title">{{data.title}}</h5>
+                                            <p class="fw-bold fs-5 mt-3">USED STACK:</p>
+                                            <ul class="list-inline ">
+                                                <li class="list-inline-item fw-bold"
+                                                    *ngFor='let stack of data.stacks ;let i = index'>
+                                                    {{stack}}</li>
+                                            </ul>
+                                            <a href="#" class="btn px-3 py-1 btn-sm">View</a>
+
+                                            <a href="#" [ngClass]="{'disabled' : data.status}"
+                                                class="btn px-3 py-1 btn-sm ms-2">Source</a>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </ng-template>
+                    </li>
+                </ul>
+
+                <div [ngbNavOutlet]="nav" class="mt-2"></div>
+
+
+            </div>
+
+        </div>
+    </div>
+</section>

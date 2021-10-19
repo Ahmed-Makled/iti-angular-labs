@@ -1,0 +1,14 @@
+.navbar-brand {
+  font-weight: 700;
+  text-transform: uppercase;
+}
+.navbar-brand span {
+  color: var(--primary-color);
+}
+.navbar-light .navbar-nav .nav-link {
+  color: #3c3c3c;
+}
+.navbar-light .navbar-nav .nav-link.active {
+  color: var(--primary-color);
+  font-weight: 700;
+}

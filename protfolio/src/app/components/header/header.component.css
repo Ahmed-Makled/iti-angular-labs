@@ -1,0 +1,9 @@
+header h1 span,
+header h3 span {
+  color: var(--primary-color);
+}
+header .btn {
+  background: var(--primary-color);
+  border-radius: 1rem;
+  color: #fff;
+}
