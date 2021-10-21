@@ -1,0 +1,27 @@
+<section class="userForm">
+    <div class="container">
+        <div class="row">
+            <div class="col-6 m-auto ">
+                <div *ngFor="let alert of errors" class="alert alert-danger alert-dismissible fade show" role="alert">
+                    {{alert}}
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-4 m-auto">
+                <form [formGroup]="user">
+                    <h2>Login</h2>
+                    <div class="mb-3"><input type="email" class="form-control" name="email" formControlName="email"
+                            placeholder="Email" /></div>
+                    <div class="mb-3"><input type="password" class="form-control" name="password"
+                            formControlName="password" placeholder="********" /></div>
+                    <div class="mb-3"><button class="btn btn-primary d-block w-100" (click)="login()" type="submit">Log
+                            In</button></div>
+                    <a class="forgot" href="#">Forgot your email or password?</a>
+                </form>
+            </div>
+        </div>
+    </div>
+
+</section>

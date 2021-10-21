@@ -1,0 +1,63 @@
+<section class="userForm">
+    <div class="container">
+        <div class="row">
+            <div class="col-6 m-auto ">
+                <div *ngFor="let alert of errors" class="alert alert-danger alert-dismissible fade show" role="alert">
+                    {{alert}}
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-6 m-auto  ">
+                <form [formGroup]="user " (ngSubmit)="register()">
+                    <h2>Register</h2>
+                    <!--name-->
+                    <div class="mb-3">
+                        <input type="text" class="form-control " name="name" formControlName="name"
+                            placeholder="Name" />
+                    </div>
+                    <!--email-->
+                    <div class="mb-3"><input type="email" class="form-control" name="email" formControlName="email"
+                            placeholder="Email" />
+
+                    </div>
+
+                    <!--userName-->
+                    <div class="mb-3"><input type="text" class="form-control " name="userName"
+                            formControlName="userName" placeholder="UserName" />
+                        <div [class.d-block]="userControls.userName.touched && !userControls.userName.valid"
+                            class="invalid-feedback">
+                            *Username don't contain spaces
+                        </div>
+
+                    </div>
+
+                    <!--Passowrd-->
+
+                    <div class="mb-3"><input type="password" class="form-control" name="password"
+                            formControlName="password" placeholder="********" />
+                        <div [class.d-block]="userControls.password.touched && !userControls.password.valid"
+                            class="invalid-feedback">
+                            *Password must Minimum eight characters
+                        </div>
+                    </div>
+                    <!--confirm-Passowrd-->
+
+                    <div class="mb-3"><input type="password" class="form-control" name="confirm-password"
+                            formControlName="confirmPassword" placeholder="********" />
+
+                        <div [class.d-block]="userControls.confirmPassword.value!==userControls.password.value"
+                            class="invalid-feedback">
+                            *Password not matched
+                        </div>
+                    </div>
+                    <div class="mb-3"><button class="btn btn-primary d-block w-100" type=" submit">Register</button>
+                    </div>
+                    <a class="forgot" href="#">Already have account? Login!</a>
+                </form>
+            </div>
+        </div>
+    </div>
+
+</section>

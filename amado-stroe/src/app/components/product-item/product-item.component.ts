@@ -18,6 +18,7 @@ export class ProductItemComponent implements OnInit {
   ngOnInit(): void {
   }
   selectItem(){
+    
     this.sendPrdItem.emit(this.productItem)
   }
 

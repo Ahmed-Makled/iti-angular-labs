@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 //components
 import { AppComponent } from './app.component';
@@ -15,6 +15,10 @@ import {MatInputModule} from '@angular/material/input';
 import {MatButtonModule} from '@angular/material/button';
 import {MatIconModule} from '@angular/material/icon';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { LoginComponent } from './views/login/login.component';
+import { RegisterComponent } from './views/register/register.component';
+import { NabvarComponent } from './components/shared/nabvar/nabvar.component';
+import { HttpClientModule } from '@angular/common/http';
 
 
 @NgModule({
@@ -22,7 +26,10 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     AppComponent,
     TodoComponent,
     TodoListComponent,
-    TodoAddComponent
+    TodoAddComponent,
+    LoginComponent,
+    RegisterComponent,
+    NabvarComponent
   ],
   imports: [
     BrowserModule,
@@ -31,7 +38,9 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     MatInputModule,MatButtonModule,
     MatIconModule,
     NgbModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule,
+    ReactiveFormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
