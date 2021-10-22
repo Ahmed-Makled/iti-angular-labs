@@ -1,11 +1,15 @@
-import { ProductDetailsComponent } from './components/product-details/product-details.component';
-import { NotFoundComponent } from './views/not-found/not-found.component';
-import { HomeComponent } from './views/home/home.component';
-import { RegisterComponent } from './views/register/register.component';
-import { LoginComponent } from './views/login/login.component';
-import { ShopComponent } from './views/shop/shop.component';
+import { ProductDetailsComponent } from './products/product-details/product-details.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+
+
+import { ProductItemComponent } from './products/product-item/product-item.component';
+import { LoginComponent } from './auth/login/login.component';
+import { NotFoundComponent } from './views/not-found/not-found.component';
+import { HomeComponent } from './views/home/home.component';
+import { RegisterComponent } from './auth/register/register.component';
+import { ShopComponent } from './views/shop/shop.component';
+
 
 const routes: Routes = [
 

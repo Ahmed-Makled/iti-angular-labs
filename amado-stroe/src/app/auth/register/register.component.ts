@@ -1,5 +1,7 @@
 import { Component, OnChanges, OnInit, SimpleChanges } from '@angular/core';
 import { FormArray, FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
+// import { Route, Router } from '@angular/router';
 
 @Component({
   selector: 'app-register',
@@ -14,7 +16,7 @@ export class RegisterComponent implements OnInit, OnChanges {
   passwordRgx="(?=.[a-z])(?=.[A-Z])(?=.[0-9])(?=.[$@$!%?&])[A-Za-z\d$@$!%?&].{8,}";  
 
 
- constructor(private fb: FormBuilder) {
+ constructor(private fb: FormBuilder, private router:Router) {
   this.user = this.fb.group({
     name:['', [Validators.required]],
     email:['', [Validators.required, Validators.email]],
@@ -62,7 +64,7 @@ removeAddress(i:number) {
    console.log(this.user.value);
 
 if (!this.user.valid )return
-console.log(this.user.value);
+this.router.navigate(['/home'])
 
  }
 

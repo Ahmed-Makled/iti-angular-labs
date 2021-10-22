@@ -1,0 +1,33 @@
+.card {
+  border: none;
+  box-shadow: none;
+  margin-bottom: 10px;
+  padding: 15px;
+}
+
+.card-header {
+  border-color: #eff2f7;
+  font-size: 16px;
+  font-weight: 300;
+}
+.card-body {
+  position: relative;
+}
+.list-group .list-group-item {
+  border: unset;
+  border-bottom: 1px dashed #d9d9d9;
+}
+.list-group .list-group-item > a {
+  color: #3b3b3b;
+  padding: 10px 15px;
+}
+
+.list-group li ul li a:hover,
+.list-group li ul li a:focus,
+.list-group li ul li.active a,
+.list-group li a:hover,
+.list-group li a:focus,
+.list-group li a.active {
+  background: none;
+  color: #ff7261;
+}
