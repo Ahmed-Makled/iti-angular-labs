@@ -1,4 +1,3 @@
-import { Iproduct } from './../../models/iproduct';
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
@@ -13,7 +12,12 @@ export class ProductService {
 
   // Fetch Products
   fetchProducts() {
- return   this.http .get(`${this.baseURL}/products`)
+ return   this.http .get(`${this.baseURL}/products`,{
+  params: {
+    limit: '5',
+  }}
+  
+  )
       
   }
 
