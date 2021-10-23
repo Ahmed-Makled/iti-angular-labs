@@ -1,0 +1,14 @@
+.router-link-active {
+  color: red !important;
+}
+
+.btn-icon {
+  font-size: 1.2rem;
+  padding: 2px;
+  color: #818a91;
+  cursor: pointer;
+}
+
+.btn-icon:hover {
+  color: #2b2b2c;
+}

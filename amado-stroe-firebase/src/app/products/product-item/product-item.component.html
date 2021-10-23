@@ -1,0 +1,62 @@
+<div class="card h-100">
+    <div class="img-box p-3 text-center m-auto">
+        <img [src]="productItem.image" class="card-img-top " alt="..." />
+
+    </div>
+    <div class="card-body  pt-5">
+        <h5 class="card-title ">{{productItem.title | uppercase}}</h5>
+
+
+        <!-- <p class="card-text">Price:{{productItem.price | number: '1.0-0'}}$</p> -->
+
+        <ul class="list-unstyled small">
+            <li class="card-text fw-bold small text-muted font-italic">
+                Category:
+                <span class="text-muted fw-normal">{{ productItem.category }}</span>
+            </li>
+            <li class="card-text fw-bold small text-muted font-italic">
+                Price:
+                <span class="text-muted fw-normal">{{
+                    productItem.price | number: "1.0-0"
+                    }}</span>
+            </li>
+
+            <li class="card-text fw-bold small text-muted font-italic">
+                rate:
+                <span class="text-muted fw-normal">
+                    <span>{{ productItem.rating.rate }}</span>
+                </span>
+            </li>
+            <li class="card-text fw-bold small text-muted font-italic">
+                count_in_stock:
+
+                <span class="text-muted fw-normal" *ngIf="productItem.rating.count_in_stock == 0; else elseBlock">
+                    Not available</span>
+                <ng-template #elseBlock>
+                    <span class="text-muted fw-normal"> available</span>
+                </ng-template>
+            </li>
+
+        </ul>
+    </div>
+
+    <div class="card-footer bg-body border-top-5">
+        <div class="row align-items-center">
+            <div class="col-2">
+                <button type="button" class="btn btn-icon">
+                    <i class="fa fa-heart"></i>
+                </button>
+            </div>
+            <div class="col-2">
+                <button type="button" class="btn btn-icon" title="" (click)=addtocart(productItem)>
+                    <i class="fa fa-shopping-cart"></i>
+                </button>
+            </div>
+            <div class="col-8">
+                <span class="btn btn-primary " routerLink="/shop/{{productItem.id}}">
+                    View Details
+                </span>
+            </div>
+        </div>
+    </div>
+</div>
