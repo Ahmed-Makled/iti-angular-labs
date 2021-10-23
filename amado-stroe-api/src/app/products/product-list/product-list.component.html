@@ -1,0 +1,79 @@
+<section>
+    <div class="container">
+        <div class="row">
+            <div class="col-3">
+                <!--search-->
+                <div class="card ">
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item">
+                            <input type="text" placeholder="Keyword Search" class="form-control">
+
+                        </li>
+
+                    </ul>
+                </div>
+
+                <!--category-->
+                <div class="card ">
+                    <div class="card-header bg-body ">
+                        Category
+                    </div>
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item ">
+                            <a class="active" href="#"><i class="fa fa-angle-right mx-2"></i>Alll</a>
+                        </li>
+                        <li class="list-group-item"> <a href="#"><i class="fa fa-angle-right mx-2"></i>Men</a></li>
+                        <li class="list-group-item"><a href=""><i class="fa fa-angle-right mx-2"></i>Women</a></li>
+                        <li class="list-group-item"><a href=""><i class="fa fa-angle-right mx-2"></i>Jewelery</a></li>
+                        <li class="list-group-item"><a href=""><i class="fa fa-angle-right mx-2"></i>Electronics</a>
+                        </li>
+                    </ul>
+                </div>
+                <!--filter-->
+                <div class="card ">
+                    <div class="card-header bg-body ">
+                        Filter
+                    </div>
+                    <form action="">
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item ">
+                                <div>
+                                    <label for="Brand" class="form-label">Brand</label>
+                                    <input type="text" class="form-control" id="Brand" placeholder="">
+                                </div>
+                            </li>
+
+                            <li class="list-group-item ">
+                                <div>
+                                    <label for="Color" class="form-label">Color</label>
+                                    <input type="color" class="form-control" id="Color" placeholder="">
+                                </div>
+                            </li>
+                            <li class="list-group-item ">
+                                <div>
+                                    <label for="Type" class="form-label">Type</label>
+                                    <input type="text" class="form-control" id="Type" placeholder="">
+                                </div>
+                            </li>
+
+                        </ul>
+
+                    </form>
+                </div>
+
+
+            </div>
+            <div class="col-9">
+                <div class="row row-cols-1 row-cols-md-2 g-4">
+                    <div class="col" *ngFor="let item of productList; let i = index">
+
+                        <app-product-item [productItem]="item" (sendPrdItem)="ProductItemRecived($event)">
+                        </app-product-item>
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</section>

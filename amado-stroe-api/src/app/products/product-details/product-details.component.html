@@ -1,0 +1,55 @@
+<div class="container-fluid mt-2 mb-3">
+    <div class="row">
+        <div class="col-md-5">
+            <div class="card">
+                <div class="demo">
+                    <ul id="lightSlider">
+                        <li> <img [src]="productItem.image" />
+                        </li>
+
+                    </ul>
+                </div>
+            </div>
+            <div class="card mt-2">
+                <h6>Reviews</h6>
+                <div class="d-flex flex-row">
+                    <div class="stars"> <i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                    </div> <span class="ml-1 font-weight-bold">{{productItem.rating.rate}}</span>
+                </div>
+                <hr>
+
+
+            </div>
+        </div>
+        <div class="col-md-7">
+            <div class="card">
+                <div class="d-flex flex-row align-items-center">
+                    <div class="p-ratings"> <i class="fa fa-star"></i> <i class="fa fa-star"></i> <i
+                            class="fa fa-star"></i> <i class="fa fa-star"></i> </div> <span
+                        class="ml-1">{{productItem.rating.rate}}</span>
+                </div>
+                <div class="about">
+                    <span class="font-weight-bold">{{productItem.title}} </span>
+                    <h6 class="font-weight-bold">{{productItem.category}}</h6>
+                    <h4 class="font-weight-bold">{{productItem.price}}</h4>
+                </div>
+                <div class="buttons"> <button class="btn btn-outline-warning btn-long cart mx-2">Add to Cart</button>
+                    <button class="btn btn-warning btn-long buy mx-2">Buy it Now</button> <button
+                        class="btn btn-light wishlist">
+                        <i class="fa fa-heart"></i> </button>
+                </div>
+                <hr>
+                <div class="product-description">
+
+                    <div class="mt-2"> <span class="font-weight-bold">Description</span>
+                        <p>{{productItem.description}}</p>
+
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
