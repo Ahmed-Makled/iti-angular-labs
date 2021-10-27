@@ -1,3 +1,4 @@
+import { RequestInterceptor } from './interceptor/request.interceptor';
 import { AuthModule } from './auth/auth.module';
 import { ProductsModule } from './products/products.module';
 import { NgModule } from '@angular/core';
@@ -10,6 +11,7 @@ import { AppComponent } from './app.component';
 import { ShopComponent } from './views/shop/shop.component';
 import { HomeComponent } from './views/home/home.component';
 import { NotFoundComponent } from './views/not-found/not-found.component';
+import { HTTP_INTERCEPTORS } from '@angular/common/http';
 
 
 @NgModule({
@@ -28,7 +30,7 @@ import { NotFoundComponent } from './views/not-found/not-found.component';
     
     
   ],
-  providers: [],
+  providers: [{provide:HTTP_INTERCEPTORS,useClass:RequestInterceptor , multi : true}],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
